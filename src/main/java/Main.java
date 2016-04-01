@@ -14,8 +14,15 @@ public class Main {
         Hanoi hanoiTest = new Hanoi(4, 0);
         System.out.println("Sticks: 4 and Tower: 0");
         System.out.println("Source: 0 and buffer: 1 and destination: 2");
-        // source buffer destination
-        hanoiTest.move(0, 1, 2);
+
+        try {
+            // source buffer destination
+            hanoiTest.move(0, 1, 2);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
         System.out.println("Result:");
         while(!hanoiTest.towers[2].sticks.isEmpty())
             System.out.println(hanoiTest.towers[2].sticks.pop());

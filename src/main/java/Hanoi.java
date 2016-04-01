@@ -16,6 +16,8 @@ public class Hanoi {
      * @param sourceTower Tower of searched
      */
     Hanoi(int sticks, int sourceTower){
+        if (sticks < 0 || sourceTower < 0)
+            throw new ArrayIndexOutOfBoundsException();
         size = sticks;
         towers = (Tower[]) Array.newInstance(Tower.class, 3);
         // Set towers
@@ -68,6 +70,8 @@ public class Hanoi {
      * @param destination target which stick will be stored
      */
     void move(int source, int buffer, int destination) {
+        if (source < 0 || buffer < 0 || destination < 0)
+            throw new ArrayIndexOutOfBoundsException("source, buffer and destination are must be over 0");
         // Empty Tower errors
         if (towers[source].sticks.isEmpty()){
             System.out.println("Tower is empty!");
